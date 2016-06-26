@@ -10,7 +10,7 @@ var express = require('express'),
 
 // Create an express instance and set a port variable
 var app = express();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8085;
 
 // Set handlebars as the templating engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main'}));
@@ -43,6 +43,6 @@ var server = http.createServer(app).listen(port, function() {
 var io = require('socket.io').listen(server);
 
 // Set a stream listener for tweets matching tracking keywords
-twit.stream('statuses/filter',{ track: 'javascript'}, function(stream){
+twit.stream('statuses/filter',{ track: 'euro2016'}, function(stream){
   streamHandler(stream,io);
 });
