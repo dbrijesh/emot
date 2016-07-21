@@ -9,7 +9,7 @@
     "build": "npm run browserify ",
     "start": "npm install"
   },
-  "author": "Ken Wheeler",
+  "author": "Brijesh D",
   "license": "MIT",
   "dependencies": {
     "express": "~4.9.7",
@@ -18,7 +18,8 @@
     "node-jsx": "~0.12.4",
     "react": "~0.14.6",
     "socket.io": "^1.1.0",
-    "twitter": "^1.2.0"
+    "twitter": "^1.2.0",
+    "retext-sentiment": "^2.0.1"
   },
   "devDependencies": {
     "browserify": "~6.0.3",

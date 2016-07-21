@@ -208,8 +208,9 @@ footer .update-message
 .tweet blockquote .content
 {
     display: block;
+    overflow: auto;
     clear: left;
-
+   
     margin-top: 5px;
 }
 

@@ -1,4 +1,7 @@
 var mongoose = require('mongoose');
+var retext = require('retext');
+var inspect = require('unist-util-inspect');
+var sentiment = require('retext-sentiment');
 
 // Create a new schema for our tweet data
 var schema = new mongoose.Schema({
@@ -25,6 +28,14 @@ schema.statics.getTweets = function(page, skip, callback) {
       tweets = docs;  // We got tweets
       tweets.forEach(function(tweet){
         tweet.active = true; // Set them to active
+          retext().use(sentiment).use(function () {
+                return function (cst) {
+                    tweet.senti =  inspect(cst);
+                };
+          }).process(tweet.body);
+              
+              
+              
       });
     }
 
